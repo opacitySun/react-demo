@@ -1,7 +1,7 @@
-import App from './src/views/App';
+import App from './views/App';
 import ReactDom from 'react-dom';
 import React from 'react';
-import store from './src/store';
+import store from './store/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -19,3 +19,17 @@ ReactDom.render(
         </Router>
     </Provider>
 , document.getElementById('root'));
+
+// 判断该浏览器支不支持 serviceWorker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/service-worker.js')
+      .then(registration => {
+        console.log('service-worker registed')
+      })
+      .catch(error => {
+        console.log('service-worker registed error')
+      })
+  })
+}

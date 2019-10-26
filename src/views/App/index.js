@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { increment } from '../../actions/index';
+import { increment } from '../../store/actions/index';
 import { Link } from "react-router-dom";
 
 
