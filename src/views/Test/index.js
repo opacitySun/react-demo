@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import { increment } from '@/store/actions/index';
 
-class App extends React.Component {
+
+class Test extends React.Component {
 
     constructor(props) {
         super(props);
@@ -44,4 +45,4 @@ export default connect(
     state => ({
         number: state.number
     })
-)(App);
+)(Test);
