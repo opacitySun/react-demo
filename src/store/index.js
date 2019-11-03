@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware } from 'redux';
-import incrementReducer from './reducers/index';
+import reducers from './reducers/index';
 import createSagaMiddleware from 'redux-saga'
-import { watchIncrementAsync } from './sagas/index'
+import { watcher } from './sagas/index'
 
 const sagaMiddleware = createSagaMiddleware()
-const store = createStore(incrementReducer, applyMiddleware(sagaMiddleware));
-sagaMiddleware.run(watchIncrementAsync)
+const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(watcher)
 export default store;

@@ -1,11 +1,16 @@
 import { delay } from 'redux-saga'
 import { put, takeEvery } from 'redux-saga/effects'
+// import { getDataTest } from '@/services/index'
 
-export function* incrementAsync() {
-  yield delay(2000)
-  yield put({ type: 'INCREMENT' })
+const effects = {
+  //延迟执行number监听
+  *fetchIncrement({ payload }){
+    yield delay(2000)
+    yield put({ type: 'INCREMENT' })
+  }
 }
 
-export function* watchIncrementAsync() {
-  yield takeEvery('INCREMENT_ASYNC', incrementAsync)
+export function* watcher() {
+  //number监听
+  yield takeEvery('fetchIncrement', effects.fetchIncrement)
 }

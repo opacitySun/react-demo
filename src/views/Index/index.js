@@ -15,11 +15,12 @@ class Index extends React.Component {
     }
 
     onClick() {
+      debugger
         this.props.dispatch(increment())
     }
 
     onClick2() {
-        this.props.dispatch({ type: 'INCREMENT_ASYNC' })
+        this.props.dispatch({ type: 'fetchIncrement' })
     }
 
     render() {
