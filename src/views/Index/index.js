@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import { increment } from '@/store/actions/index';
-import styles from './index.scss';
+import './index.scss';
 
 class Index extends React.Component {
 
