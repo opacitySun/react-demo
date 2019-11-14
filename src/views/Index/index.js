@@ -15,7 +15,6 @@ class Index extends React.Component {
     }
 
     onClick() {
-      debugger
         this.props.dispatch(increment())
     }
 
